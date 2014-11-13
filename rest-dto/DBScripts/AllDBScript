@@ -1,0 +1,43 @@
+CREATE TABLE places (
+  place_id int(10) NOT NULL AUTO_INCREMENT,
+  google_place_id varchar(200) NOT NULL,
+  reference_id varchar(200),
+  keyword varchar(100),
+  longitude double(10,5),
+  latitude double(10,5),
+  address varchar(200),
+  city varchar(100),
+  state varchar(100),
+  country varchar(100),
+  post_code varchar(100),
+  pricelevel int,
+  rating float(1,1),
+  is_open varchar(10) ,
+  phone_number varchar(30),
+  icon varchar(200),
+  maps_url varchar(200),
+  website varchar(200),
+  PRIMARY KEY (place_id,google_place_id)
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 ;
+
+
+
+
+create table visit_timing(
+    visit_timing_id int NOT NULL AUTO_INCREMENT,
+    day varchar(30),
+    opentime varchar(30),
+    closetime varchar(30)
+    PRIMARY KEY (visit_timing_id) 
+   ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
+
+
+
+create table places_visit_timing(
+     places_visit_timing_id int NOT NULL AUTO_INCREMENT,
+     place_id int ,
+     visit_timing_id int,
+     PRIMARY KEY (places_visit_timing_id),
+     FOREIGN KEY (place_id) REFERENCES places(place_id),
+     FOREIGN KEY (visit_timing_id) REFERENCES visit_timing(visit_timing_id)
+     )ENGINE=InnoDB AUTO_INCREMENT=100 CHARSET=utf8;

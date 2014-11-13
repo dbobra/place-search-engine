@@ -1,0 +1,11 @@
+<script language="text/javascript">
+
+function jsonparsing(String result){
+
+alert("darshan");
+var txt = result;
+obj = JSON.parse(txt);
+document.getElementById("id").innerHTML =obj.result[1].reference;
+document.getElementById("id").innerHTML = obj.result[1].id;
+}
+</script>
