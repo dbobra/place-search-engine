@@ -641,8 +641,6 @@
 								<dependencySourceInclude>com.sofmen.rest.*:*</dependencySourceInclude>
 							</dependencySourceIncludes>
 							<includeTransitiveDependencySources>false</includeTransitiveDependencySources>
-							<!-- <additionalJOption>-J-DRESTDOCLET_LOGGING=${RESTDOCLET_LOGGING} 
-								-J-XX:-UseSplitVerifier</additionalJOption> -->
 						</configuration>
 						<executions>
 							<execution>
